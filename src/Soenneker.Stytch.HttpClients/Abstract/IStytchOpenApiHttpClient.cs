@@ -6,12 +6,22 @@ using System.Threading;
 namespace Soenneker.Stytch.HttpClients.Abstract;
 
 /// <summary>
-/// A .NET thread-safe singleton HttpClient for 
+/// Provides an authenticated, cached <see cref="HttpClient"/> for Stytch's backend API.
 /// </summary>
-public interface IStytchOpenApiHttpClient: IDisposable, IAsyncDisposable
+public interface IStytchOpenApiHttpClient : IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Gets the value.
+    /// Removes and disposes the HTTP client owned by this provider.
+    /// </summary>
+    new void Dispose();
+
+    /// <summary>
+    /// Asynchronously removes and disposes the HTTP client owned by this provider.
+    /// </summary>
+    new ValueTask DisposeAsync();
+
+    /// <summary>
+    /// Gets the cached Stytch HTTP client, creating it on first use.
     /// </summary>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task containing the result of the operation.</returns>

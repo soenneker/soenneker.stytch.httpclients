@@ -6,7 +6,7 @@ using Soenneker.Utils.HttpClientCache.Registrar;
 namespace Soenneker.Stytch.HttpClients.Registrars;
 
 /// <summary>
-/// Registers the OpenAPI HttpClient wrapper for dependency injection.
+/// Registers an authenticated HTTP client provider for Stytch's backend API.
 /// </summary>
 public static class StytchOpenApiHttpClientRegistrar
 {
