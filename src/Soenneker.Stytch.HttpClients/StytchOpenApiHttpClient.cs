@@ -12,6 +12,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.Stytch.HttpClients;
 
+/// <inheritdoc cref="IStytchOpenApiHttpClient" />
 public sealed class StytchOpenApiHttpClient : IStytchOpenApiHttpClient
 {
     private readonly IHttpClientCache _httpClientCache;
