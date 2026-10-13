@@ -43,7 +43,7 @@ public sealed class StytchOpenApiHttpClient : IStytchOpenApiHttpClient
             }
             else
             {
-                var apiKey = state.config.GetValueStrict<string>("Stytch:ApiKey");
+                var apiKey = state.config.GetStringStrict("Stytch:ApiKey");
                 string authHeaderValueTemplate = state.config["Stytch:AuthHeaderValueTemplate"] ?? "Basic {token}";
                 authHeaderValue = authHeaderValueTemplate.Replace("{token}", apiKey, StringComparison.Ordinal);
             }
